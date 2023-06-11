@@ -1,0 +1,93 @@
+Ayuda
+git help: Ayuda
+git help add: Abre la página manual de git-add
+git help commit: Abre la página manual de git-commit
+
+Establecer usuario y e-mail
+git config --global user.name "nombre de usuario"
+git config --global user.email "email"
+
+Eliminar todos los registros que se refieren al usuario y al e-mail
+git config --global --unset user.name "nombre de usuario"
+git config --global --unser user.email "email"
+
+Ver configuración de git
+git config --list
+
+Crear nuevo repositorio (local)
+git init
+
+Verificar el estado de los archivos/directorios
+git status
+
+Añadir un archivo 
+git add nombre_archivo_directorio (archivo o directorio específico)
+git add . / git add --all (todos los archivos)
+
+Commitear 
+git commit -m "mensaje del commit" (todos los archivos en seguimiento)
+git commit nombre_archivo -m "mensaje del commit" (archivo específico)
+
+Remover archivo o directorio
+git rm archivo
+git rm -r directorio (remueve directorio y su contenido)
+
+Ver historial de actividad
+git log (muestra el historial)
+git log -- <ruta del archivo> (muestra el historial de un archivo específico)
+git log --author=usuario (muestra el historial de un usuario en particular)
+
+Deshacer operaciones
+Deshacer el cambio local en su directorio de trabajo local
+git checkout --archivo (se debe usar antes de añadir el archivo al área de trabajo temporal-staged área)
+Deshacer el cambio local en el área de trabajo temporal (staged area)
+git reset HEAD archivo (se usa cuando el archivo se agregó al área temporal)
+
+Cambio de repositorio
+git checkout "rama" (permite realizar el cambio a otra rama de trabajo)
+
+Repositorio remoto
+git-remote
+git remote -v
+git remote add origin git@github.com:minombre/archivo-git.git (enlaza el repositorio local con un repositorio remoto)
+git remote show origin (permite ver la información de los repositorios remotos)
+git remote rename origin nombre_nuevo (renombra un repositorio remoto)
+git remote rm nombre_git (desvincula un repositorio remoto)
+git push -u origin main (el primer push en el repositorio debe hacerse indicando su nombre y branch)
+git push (los otros push no necesitan esa información)
+
+Actualizar repositorio local según repositorio remoto
+git pull (actualizar los archivos contra la rama actual)
+git fetch (obtiene los cambios pero no los aplica a la rama actual)
+
+Clonar un repositorio remoto
+git clone git@github.com:minombre/archivo-git.git
+
+Branch (ramas)
+git branch nuevaBranch_nombre (crea una nueva rama)
+git checkout nuevaBranch_nombre (cambia a una rama existente)
+git checkout -b nuevaBranch_nombre (crea una nueva rama y apunta a ella)
+git checkout main (vuelve a la rama principal main)
+git merge nuevaBranch_nombre (resuelve la unión (merge) entre las ramas) - Para realizarlo debe estar en la rama que recibirá los cambios
+git branch -d nuevaBranch_nombre (apaga/elimina una rama)
+git branch (lista de ramas)
+git branch -v (lista de ramas con información de últimos commits)
+git branch --merged (lista de ramas que ya se unieron con la main)
+git branch --no-mergeg (lista de ramas que no se unieron con la main)
+git pull origin nuevaBranch_nombre (obtiene los archivos de una rama existente)
+git push origin nuevaBranch_nombre (crea una rama remota con el mismo nombre)
+git merge --abort / git reset --merge (usar cuando se tiene problemas con la unión y queremos deshacerla)
+git reset HEAD (cuando queremos volver a un commit anterior; si queremos volver a más de un commit anterior debemos poner el número de commits después de HEAD: HEAD~2)
+
+Cambiar mensaje de commit
+git commit --amend -m "Mi nuevo mensaje" (cambia los mensajes del commit)
+
+Comandos de la terminal
+Ctrl+l / clear: Limpiar consola
+mkdir: Crear carpeta(s)
+cd: Cambiar de directorio
+cd ..: Cambiar de directorio a carpeta superior
+ls: Ver lo que hay dentro de la carpeta
+rm nombre: Borrar archivo
+rm -r nombre: Borrar directorio y contenido
+rm -rf nombre: Borrar directorio y contenido en forma forzada
